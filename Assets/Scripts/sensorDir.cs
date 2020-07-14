@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class sensorEsq : MonoBehaviour {
+public class sensorDir : MonoBehaviour {
     movimento script;
     // Start is called before the first frame update
     void Start () {
@@ -13,26 +13,24 @@ public class sensorEsq : MonoBehaviour {
     void Update () {
 
     }
-
-    private void OnTriggerEnter2D (Collider2D other) {
-        if (other.tag == "caminho") {
-            script.rodandoEsq = true;
-            script.rodandoDir = false;
-        }
-    }
+    // private void OnTriggerEnter2D (Collider2D other) {
+    //     if (other.tag == "caminho") {
+    //         script.rodandoDir = true;
+    //         script.rodandoEsq = false;
+    //     }
+    // }
 
     private void OnTriggerStay2D (Collider2D other) {
         if (other.tag == "caminho") {
-            if (!script.rodandoDir) {
-                script.girarEsq ();
+            // if (!script.rodandoEsq) {
+                script.girarDir ();
                 Debug.Log (other.tag);
-            }
+            // }
         }
-
     }
     private void OnTriggerExit2D (Collider2D other) {
         if (other.tag == "caminho") {
-            script.rodandoEsq = false;
+            script.rodandoDir = false;
         }
     }
 }

@@ -6,7 +6,7 @@ public class movimento : MonoBehaviour {
     public bool rodandoEsq = false;
     public bool rodandoDir = false;
     public float velocidade = 5f;
-    public float grauRotacao = 45f;
+    public float grauRotacao = 5f;
 
 
     Rigidbody2D rb;
@@ -16,7 +16,7 @@ public class movimento : MonoBehaviour {
 
 
     void Update () {
-
+        moverFrente();
     }
     private void FixedUpdate () {
 
